@@ -1,4 +1,4 @@
 from django.urls import path
-from blof import views
+from blog import views
 
-urlpatterns = [path('', views.index,]                        #path(route, view, kwargs=None, name=None)
+urlpatterns = [path('', views.index, hame = 'home'),]                        #path(route, view, kwargs=None, name=None)
