@@ -16,6 +16,10 @@
 {% else %}
     <p> Ваш возраст недопустим </p>
 {% endif %}
+
+<h1>{% block title_h1 %}{% endblock title_h1 %}</h1>
+<div>{% block content %}{% endblock content %}</div>
+
 <footer>
     <div>MyCorp 2008. All rights reserved</div>
 </footer>
