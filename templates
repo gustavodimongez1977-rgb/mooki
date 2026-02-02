@@ -8,6 +8,6 @@
 </head>
 <body>
     <h2>{{ header }}</h2>
-    <p>{{ message }}</p>
+    <p>{{ message.0 }}</p>
 </body>
 </html>
