@@ -1,7 +1,10 @@
 from django.shortcuts import render
 
 def index(request):
-    data = {'header': 'Hello Django', 'message': 'Welcome to Python'}
+    header = 'Hello Django'
+    message = {'Welcome': 'Привет пользователь', 'Welcome2': 'Здарова, братан'}
+
+    data = {'header': header, 'message': message}
     return render(request, 'blog/index.html', context=data)
 
 
