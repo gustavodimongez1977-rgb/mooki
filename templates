@@ -1,5 +1,6 @@
 Шаблон index.html 
 
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,8 @@
     <title>Учу Django</title>
 </head>
 <body>
+    <h1>Логотип Django</h1>
+    <img src="{% static 'images/django_logo.png' %}" width="300px">                     #Путь до файла изображения будет таким: blog/static/images/django_logo.png
 {% if age > 18 %}
     <h2>{{ header }}</h2>
     <p>{{ message.0 }}</p>
