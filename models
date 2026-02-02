@@ -1,1 +1,12 @@
+from django.db import models
+
+class Bookings(models.Model):
+    number = models.TextField()
+    eta_date = models.TextField()
+
+class Meta:
+    ordering = ['eta_date']
+
+    def __str__(self):
+        return self.text[:10]
 
