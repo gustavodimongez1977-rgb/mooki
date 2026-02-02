@@ -1,6 +1,4 @@
-from django.http import HttpResponse
+from django.urls import path
+from blof import views
 
-def index(request):
-    return HttpResponse('<h2>Главная страница</h2>')
-
-
+urlpatterns = [path('', views.index,]
