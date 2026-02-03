@@ -1,13 +1,15 @@
 from django.db import models
 
 class Bookings(models.Model):
-    number = models.TextField()                       #field_name = models.CharField(max_length= , help_text= , choices= , Null etc)
+    number = models.TextField(max_length=3, help_text='Номер заказа', verbose_name = 'тут номер заказа', unique = True)                       #field_name = models.CharField(max_length= , help_text= , choices= , Null etc)
     cntr_number = models.TextField()
     eta_date = models.DateField()
 
-class Meta:
-    ordering = ['eta_date']
+    class Meta:
+        ordering = ['eta_date']
+        verbose_name = 'Номер букинга'
+        db_table = 'Таблица букингов'
 
     def __str__(self):
-        return self.text[:10]
+        return self.number[:10]
 
