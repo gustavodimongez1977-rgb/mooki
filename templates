@@ -8,6 +8,10 @@
     <title>{% block title %}Default Title{% endblock title %}</title>
 </head>
 <body>
+    <table>
+        {{ form.as_table }}
+    </table>
+
     <h1>Логотип Django</h1>
     <img src="{% static 'images/django_logo.png' %}" width="300px">                     #Путь до файла изображения будет таким: blog/static/images/django_logo.png
 {% if age > 18 %}
