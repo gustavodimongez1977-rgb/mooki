@@ -1,11 +1,13 @@
 from django.shortcuts import render
+from .forms import UserForm
 
 def index(request):
     header = 'Hello Django'
     message = {'Welcome': 'Привет пользователь', 'Welcome2': 'Здарова, братан'}
 
     data = {'header': header, 'message': message, 'age' = 18}
-    return render(request, 'blog/index.html', context=data)
+    userform = UserForm()
+    return render(request, 'index.html', {'form': userform}, context=data)
 
 
 
