@@ -1,1 +1,44 @@
+https://fastapi.tiangolo.com/ru/
+
+pip install fastapi[all] # в терминале или командной строке устанавливаем fastAPI 
+pip install uvicorn[standard] # установка виртуального сервера
+________________________________________
+# main.py
+from fastapi import FastAPI
+app = FastAPI()
+
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
+@app.get('/custom')
+def custom():
+    return {'message': 'Second page'}
+
+________________________________________
+uvicorn main:app --reload    # запускаем приложение в виртаульном сервере  main указывает на файл main.py, app указывает на объект который создали, --reload атоматом перезапускает сервак при внесении изменений
+http://localhost:8000 - — это будет ваша точка входа, которая возвращает сообщение {"message": "Hello, World!"}
+http://127.0.0.1:8000/custom
+
+либо 
+fastapi dev main.py - команда сама найдет APP в mail.py и запустит сервер
+http://localhost:8000 - — это будет ваша точка входа, которая возвращает сообщение {"message": "Hello, World!"}
+http://127.0.0.1:8000/custom
+_________________________________________
+Создаем виртуальное окружение, чтобы приложение использовало только нужные библиотеки без глобальных установленных в системе.
+
+Командная строка или PowerShell
+перейти в корневой каталог проекта
+python -m venv venv (venv имя папки где будет создано вирт окружение)
+
+активируем вирт окружение
+командная строка - venv\Scripts\activate
+PowerShell .\venv\Scripts\Activate.sp1
+
+После активации - в ком строке или терминале появится префикс (venv)
+
+после активации установить все необходимые пакеты указанные в файле requrements.txt
+pip install -r requrements.txt
+__________________________________________
+
 
